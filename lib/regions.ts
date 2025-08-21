@@ -7,9 +7,7 @@ export const majorAreas = [
   { id: "Chiba", label: "千葉" },
   { id: "Fukuoka", label: "福岡" },
 ] as const;
-
 export type MajorAreaId = typeof majorAreas[number]["id"];
-
 export const regions = [
   { id: "Hokkaido", ja: "北海道", vi: "Hokkaidō" },
   { id: "Tohoku", ja: "東北", vi: "Tōhoku" },
@@ -20,5 +18,4 @@ export const regions = [
   { id: "Shikoku", ja: "四国", vi: "Shikoku" },
   { id: "KyushuOkinawa", ja: "九州・沖縄", vi: "Kyūshū & Okinawa" },
 ] as const;
-
 export type RegionId = typeof regions[number]["id"];

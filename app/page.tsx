@@ -42,7 +42,7 @@ export default function Page() {
       <header className="container py-6 flex items-center gap-4">
         <div className="flex-1">
           <div className="inline-flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-medical-500 to-mint-500 flex items-center justify-center text-white font-bold">MF</div>
+            <img src="/logo.png" alt="Mediflow" className="w-10 h-10 rounded-2xl object-cover" />
             <div>
               <h1 className="text-xl font-bold text-medical-800">Mediflow Jobs</h1>
               <p className="text-sm opacity-75">{t.subtitle}</p>
@@ -67,9 +67,7 @@ export default function Page() {
         </div>
 
         <div className="grid gap-3">
-          {filtered.length === 0 && (
-            <div className="card">{t.no_results}</div>
-          )}
+          {filtered.length === 0 && <div className="card">{t.no_results}</div>}
           {filtered.map(job => <JobCard key={job.id} job={job} lang={lang} />)}
         </div>
       </section>

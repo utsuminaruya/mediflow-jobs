@@ -1,5 +1,4 @@
 import type { MajorAreaId, RegionId } from "./regions";
-
 export type Job = {
   id: string;
   title_ja: string;
@@ -11,11 +10,8 @@ export type Job = {
   visa: "特定技能" | "技術・人文知識・国際業務" | "留学可" | "不問";
   language: "N5" | "N4" | "N3" | "N2" | "N1" | "不問";
   salary: string;
-  tags: string[]; // e.g., ["寮あり","土日休み"]
+  tags: string[];
 };
-
-// === ここに求人をコピペ追加してください ===
-// 以下はサンプルです。雰囲気と項目の参考にしてください。
 export const jobs: Job[] = [
   {
     id: "sample-1",
@@ -42,18 +38,5 @@ export const jobs: Job[] = [
     language: "N4",
     salary: "時給 1,300〜1,600円",
     tags: ["駅近", "シフト柔軟"]
-  },
-  {
-    id: "sample-3",
-    title_ja: "介護スタッフ（夜勤なし）",
-    title_vi: "Điều dưỡng (không ca đêm)",
-    description_ja: "グループホームでの介護。夜勤なしで生活リズム安定。",
-    description_vi: "Công việc điều dưỡng tại group home. Không có ca đêm, nhịp sống ổn định.",
-    prefecture: "Osaka",
-    region: "Kinki",
-    visa: "特定技能",
-    language: "N3",
-    salary: "月給 220,000〜260,000円",
-    tags: ["夜勤なし", "残業少なめ"]
   }
 ];
