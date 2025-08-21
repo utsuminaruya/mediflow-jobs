@@ -23,7 +23,7 @@ export default function JobCard({ job, lang }: { job: Job; lang: Lang }){
           <a href="tel:0427160218" className="btn btn-primary">電話</a>
           <a href="mailto:mediflow1002@gmail.com" className="btn btn-ghost">メール</a>
           <a href="https://lin.ee/1Q4fYRt" target="_blank" rel="noreferrer" className="btn btn-ghost">LINE</a>
-          <a href="https://www.facebook.com/messages/e2ee/t/9793171584080003/" target="_blank" rel="noreferrer" className="btn btn-ghost">Messenger</a>
+          <a href="https://www.facebook.com/MediflowKK/" target="_blank" rel="noreferrer" className="btn btn-ghost">Messenger</a>
         </div>
       </div>
     </article>
