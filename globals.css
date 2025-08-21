@@ -2,38 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg: #f7fbff;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
+:root{ --bg:#f7fbff; }
+html,body{ height:100%; }
+body{
   background: radial-gradient(1200px 800px at 10% -10%, rgba(57,178,240,0.10), transparent 60%),
               radial-gradient(900px 600px at 110% 10%, rgba(20,197,178,0.10), transparent 40%),
               var(--bg);
-  color: #0b2a38;
+  color:#0b2a38;
 }
-.container {
-  @apply max-w-6xl mx-auto px-4;
-}
-
-.btn {
-  @apply inline-flex items-center justify-center rounded-2xl px-4 py-2 font-medium shadow-soft transition hover:scale-[1.01] active:scale-[0.99];
-}
-.btn-primary {
-  @apply bg-medical-500 text-white hover:bg-medical-600;
-}
-.btn-ghost {
-  @apply bg-white text-medical-700 border border-medical-200 hover:bg-medical-50;
-}
-
-.badge {
-  @apply px-2 py-0.5 rounded-full text-xs font-semibold border border-medical-200 bg-white;
-}
-
-.card {
-  @apply rounded-2xl bg-white shadow-soft p-4;
-}
+.container{ @apply max-w-6xl mx-auto px-4; }
+.btn{ @apply inline-flex items-center justify-center rounded-2xl px-4 py-2 font-medium shadow-soft transition hover:scale-[1.01] active:scale-[0.99]; }
+.btn-primary{ @apply bg-medical-500 text-white hover:bg-medical-600; }
+.btn-ghost{ @apply bg-white text-medical-700 border border-medical-200 hover:bg-medical-50; }
+.badge{ @apply px-2 py-0.5 rounded-full text-xs font-semibold border border-medical-200 bg-white; }
+.card{ @apply rounded-2xl bg-white shadow-soft p-4; }
