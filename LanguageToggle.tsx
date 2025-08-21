@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import type { Lang } from "@/lib/i18n";
-export default function LanguageToggle({ onChange }: { onChange: (lang: Lang) => void }) {
+export default function LanguageToggle({ onChange }: { onChange: (lang: Lang) => void }){
   const [lang, setLang] = useState<Lang>("ja");
   useEffect(()=>{ const s = localStorage.getItem("lang") as Lang | null; if(s){ setLang(s); onChange(s);} },[onChange]);
   const set = (l:Lang)=>{ setLang(l); localStorage.setItem("lang", l); onChange(l); };

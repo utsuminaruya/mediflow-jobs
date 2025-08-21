@@ -1,5 +1,4 @@
 export type Lang = "ja" | "vi";
-
 export const dict = {
   ja: {
     site_title: "外国人向け 介護・医療系 求人",
@@ -42,5 +41,4 @@ export const dict = {
     vi: "Tiếng Việt",
   }
 } as const;
-
 export const uiText = (lang: Lang) => dict[lang];

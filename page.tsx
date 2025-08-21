@@ -39,13 +39,12 @@ export default function Page() {
 
   return (
     <main>
-      <header className="container py-6 flex items-center gap-4">
+      <header className="container py-5 sm:py-6 flex items-center gap-4">
         <div className="flex-1">
           <div className="inline-flex items-center gap-3">
             <img src="/logo.png" alt="Mediflow" className="w-10 h-10 rounded-2xl object-cover" />
             <div>
-              <h1 className="text-xl font-bold text-medical-800">Mediflow Jobs</h1>
-              <p className="text-sm opacity-75">{t.subtitle}</p>
+              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-medical-800">Mediflow Jobs</h1>
             </div>
           </div>
         </div>
