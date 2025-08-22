@@ -1,9 +1,9 @@
-# Mediflow Jobs (JP/VI) – v3 Mobile
-- スマホ最適化（大きめボタン／読みやすい文字／余白拡張）
-- タイトル拡大（Mediflow Jobs）。**サブタイトルは非表示**
-- 電話 / メール / LINE / Messenger ボタン
-- 主要エリア + 地域フィルタ、JP/VI切替
-- フッターに住所（神奈川県緑区橋本）
+# Mediflow Jobs – v3 (Mobile Optimized)
+- モバイル最適化：大きめボタン、フッター手前の**モバイル用クイックバー**（電話/メール/LINE/Messenger）
+- ヘッダー：サブタイトル非表示、**タイトルを大型化**
+- 日本語/ベトナム語切替
+- 主要エリア＋地域フィルタ、タグ表示（#なし）
+- フッターに住所を表示（神奈川県緑区橋本）
 
 ## セットアップ
 ```bash
@@ -12,7 +12,7 @@ npm run dev
 ```
 
 ## デプロイ
-GitHubへpushするとVercelで自動ビルド。
+GitHubにpush → Vercelが自動ビルド
 
 ## Messenger URL
-`components/JobCard.tsx` の `https://m.me/` を、あなたのFBページに変更してください（例 `https://m.me/mediflowjp`）。
+`components/JobCard.tsx` と `MobileQuickBar.tsx` の `https://m.me/` を、あなたのFacebookページのURLに変更してください（例: `https://m.me/mediflowjp`）。

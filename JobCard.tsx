@@ -10,7 +10,7 @@ export default function JobCard({ job, lang }: { job: Job; lang: Lang }){
       <div className="flex flex-col sm:flex-row sm:items-start gap-3">
         <div className="flex-1">
           <h3 className="text-lg font-semibold mb-1">{title}</h3>
-          <p className="text-sm sm:text-base opacity-80 mb-2">{truncate(desc, 120)}</p>
+          <p className="text-sm opacity-80 mb-2">{truncate(desc, 120)}</p>
           <div className="flex flex-wrap gap-2 text-sm">
             <span className="badge">📍 {job.prefecture}</span>
             <span className="badge">💴 {job.salary}</span>
@@ -19,11 +19,11 @@ export default function JobCard({ job, lang }: { job: Job; lang: Lang }){
             {job.tags.map(t => <span key={t} className="badge">{t}</span>)}
           </div>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-1 gap-2 min-w-[210px]">
-          <a href="tel:0427160218" className="btn btn-primary">電話</a>
-          <a href="mailto:mediflow1002@gmail.com" className="btn btn-ghost">メール</a>
-          <a href="https://lin.ee/1Q4fYRt" target="_blank" rel="noreferrer" className="btn btn-ghost">LINE</a>
-          <a href="https://m.me/" target="_blank" rel="noreferrer" className="btn btn-ghost">Messenger</a>
+        <div className="flex gap-2 sm:flex-col w-full sm:w-auto">
+          <a href="tel:0427160218" className="btn btn-primary w-full sm:w-auto btn-lg">電話</a>
+          <a href="mailto:mediflow1002@gmail.com" className="btn btn-ghost w-full sm:w-auto btn-lg">メール</a>
+          <a href="https://lin.ee/1Q4fYRt" target="_blank" rel="noreferrer" className="btn btn-ghost w-full sm:w-auto btn-lg">LINE</a>
+          <a href="https://m.me/" target="_blank" rel="noreferrer" className="btn btn-ghost w-full sm:w-auto btn-lg">Messenger</a>
         </div>
       </div>
     </article>

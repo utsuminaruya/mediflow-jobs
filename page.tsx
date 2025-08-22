@@ -4,6 +4,7 @@ import LanguageToggle from "@/components/LanguageToggle";
 import RegionSelector from "@/components/RegionSelector";
 import Filters from "@/components/Filters";
 import JobCard from "@/components/JobCard";
+import MobileQuickBar from "@/components/MobileQuickBar";
 import { jobs } from "@/lib/jobs";
 import { uiText, type Lang } from "@/lib/i18n";
 
@@ -38,18 +39,18 @@ export default function Page() {
   }, [kw, sel]);
 
   return (
-    <main>
-      <header className="container py-5 sm:py-6 flex items-center gap-4">
+    <main className="pb-24">
+      <header className="container py-6 flex items-center gap-4">
         <div className="flex-1">
           <div className="inline-flex items-center gap-3">
             <img src="/logo.png" alt="Mediflow" className="w-10 h-10 rounded-2xl object-cover" />
             <div>
-              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-medical-800">Mediflow Jobs</h1>
+              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-medical-800">Mediflow Jobs</h1>
             </div>
           </div>
         </div>
         <LanguageToggle onChange={setLang} />
-        <a href="mailto:mediflow1002@gmail.com" className="btn btn-primary ml-2">{t.cta_contact}</a>
+        <a href="mailto:mediflow1002@gmail.com" className="btn btn-primary ml-2">相談する</a>
       </header>
 
       <section className="container grid gap-4">
@@ -76,6 +77,8 @@ export default function Page() {
           <p>{t.footer_note}</p>
         </div>
       </footer>
+
+      <MobileQuickBar />
     </main>
   );
 }
