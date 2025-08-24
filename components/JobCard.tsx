@@ -1,30 +1,64 @@
 "use client";
+import { useState } from "react";
+import Link from "next/link";
 import type { Job } from "@/lib/jobs";
-import type { Lang } from "@/lib/i18n";
-import { truncate } from "@/lib/text";
-export default function JobCard({ job, lang }: { job: Job; lang: Lang }){
-  const title = lang==="ja"? job.title_ja : job.title_vi;
-  const desc = lang==="ja"? job.description_ja : job.description_vi;
+
+type Props = { job: Job; lang: "ja" | "vi" };
+
+export default function JobCard({ job, lang }: Props) {
+  const [open, setOpen] = useState(false);
+
+  const title = lang === "ja" ? job.title_ja : job.title_vi;
+  const desc = lang === "ja" ? job.description_ja : job.description_vi;
+
+  // カード内表示用：折りたたみ（初期は短く、クリックで全開）
+  const short = desc.length > 160 ? desc.slice(0, 160) + "…" : desc;
+
   return (
-    <article className="card">
-      <div className="flex flex-col sm:flex-row sm:items-start gap-3">
-        <div className="flex-1">
-          <h3 className="text-lg font-semibold mb-1">{title}</h3>
-          <p className="text-sm opacity-80 mb-2">{truncate(desc, 120)}</p>
-          <div className="flex flex-wrap gap-2 text-sm">
-            <span className="badge">📍 {job.prefecture}</span>
-            <span className="badge">💴 {job.salary}</span>
-            <span className="badge">🛂 {job.visa}</span>
-            <span className="badge">🗣 {job.language}</span>
-            {job.tags.map(t => <span key={t} className="badge">{t}</span>)}
-          </div>
+    <article className="card flex gap-4">
+      <div className="flex-1 min-w-0">
+        <h3 className="text-lg sm:text-xl font-semibold mb-1">{title}</h3>
+
+        {/* ★ 省略せず読める：トグルで全文 */}
+        <p className="text-sm leading-6 whitespace-pre-line">
+          {open ? desc : short}
+        </p>
+        {desc.length > 160 && (
+          <button
+            onClick={() => setOpen(v => !v)}
+            className="mt-1 text-medical-700 hover:underline text-sm"
+          >
+            {open ? (lang === "ja" ? "閉じる" : "Đóng") : (lang === "ja" ? "続きを読む" : "Xem thêm")}
+          </button>
+        )}
+
+        {/* メタ情報 */}
+        <div className="mt-3 flex flex-wrap gap-2 text-xs">
+          <span className="badge">📍 {job.prefecture}</span>
+          <span className="badge">💴 {job.salary}</span>
+          <span className="badge">🪪 {job.visa}</span>
+          <span className="badge">🗣 {job.language}</span>
+          {job.tags.map(t => (
+            <span className="badge" key={t}>{t}</span>
+          ))}
         </div>
-        <div className="flex gap-2 sm:flex-col w-full sm:w-auto">
-          <a href="tel:0427160218" className="btn btn-primary w-full sm:w-auto btn-lg">電話</a>
-          <a href="mailto:mediflow1002@gmail.com" className="btn btn-ghost w-full sm:w-auto btn-lg">メール</a>
-          <a href="https://lin.ee/1Q4fYRt" target="_blank" rel="noreferrer" className="btn btn-ghost w-full sm:w-auto btn-lg">LINE</a>
-          <a href="https://m.me/" target="_blank" rel="noreferrer" className="btn btn-ghost w-full sm:w-auto btn-lg">Messenger</a>
-        </div>
+      </div>
+
+      {/* 右側のアクション列 ＋ 詳細ページの導線 */}
+      <div className="w-32 shrink-0 flex flex-col gap-3 items-stretch">
+        <a href="tel:0427160218" className="btn btn-primary">電話</a>
+        <a href="mailto:mediflow1002@gmail.com" className="btn">メール</a>
+        <a href="https://lin.ee/1Q4fYRt" className="btn">LINE</a>
+        <a href="https://m.me/" className="btn">Messenger</a>
+
+        {/* ★ 追加：求人詳細ページへ */}
+        <Link
+          href={`/job/${job.id}`}
+          className="btn btn-outline"
+          prefetch
+        >
+          {lang === "ja" ? "詳細を見る" : "Xem chi tiết"}
+        </Link>
       </div>
     </article>
   );
