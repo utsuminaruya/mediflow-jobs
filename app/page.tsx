@@ -4,7 +4,6 @@ import LanguageToggle from "@/components/LanguageToggle";
 import RegionSelector from "@/components/RegionSelector";
 import Filters from "@/components/Filters";
 import JobCard from "@/components/JobCard";
-import MobileQuickBar from "@/components/MobileQuickBar";
 import { jobs } from "@/lib/jobs";
 import { uiText, type Lang } from "@/lib/i18n";
 
@@ -78,7 +77,6 @@ export default function Page() {
         </div>
       </footer>
 
-      <MobileQuickBar />
     </main>
   );
 }
