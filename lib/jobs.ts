@@ -14,52 +14,52 @@ export type Job = {
   tags: string[];
 };
 
-export const jobs: Job[] = [
-  {
-    id: "kng-001",
-    title_ja: "介護スタッフ（特定技能・有料老人ホーム）",
-    title_vi: "Điều dưỡng (Tokutei) tại viện dưỡng lão",
-    description_ja:
-      "有料老人ホームでの介護業務全般を担当します。入浴・食事・排泄の介助に加え、見守りやリハビリ補助、季節イベントの準備など生活全体を支える役割です。入職後は先輩がマンツーマンで研修し、評価表に沿って段階的にスキルを習得できます。外国籍職員も多く、就業規則やマニュアルはやさしい日本語で整備。夜勤は複数名体制で、初めての方でも不安なくシフトに入れます。",
-    description_vi:
-      "Công việc bao gồm hỗ trợ ăn uống, tắm rửa, vệ sinh, theo dõi tình trạng hằng ngày và chuẩn bị hoạt động theo mùa cho người cao tuổi. Sau khi vào làm, bạn được hướng dẫn theo lộ trình rõ ràng để nâng cao kỹ năng. Nơi làm việc có nhiều nhân viên nước ngoài, tài liệu hướng dẫn bằng tiếng Nhật dễ hiểu. Ca đêm luôn có nhiều người trực chung nên an tâm cho người mới.",
-    prefecture: "Kanagawa",
-    region: "Kanto",
-    visa: "特定技能",
-    language: "N3",
-    salary: "月給 230,000〜270,000円",
-    tags: ["寮・社宅あり", "N3+", "土日休み"]
-  },
-  {
-    id: "tky-002",
-    title_ja: "病院内サポート（無資格OK・病棟助手）",
-    title_vi: "Trợ lý bệnh viện (không yêu cầu chứng chỉ)",
-    description_ja:
-      "病棟での患者搬送、シーツ交換、備品補充、環境整備を担当。医療行為はありませんが、看護師・医師と連携しチームで動きます。未経験者向けの院内研修があり、衛生管理・専門用語・動線を基礎から習得可能。週ごとのシフト調整で、学業や家庭との両立がしやすい環境です。",
-    description_vi:
-      "Bạn dẫn bệnh nhân di chuyển, thay ga giường, bổ sung vật tư và giữ vệ sinh khu vực. Không yêu cầu thao tác y khoa, làm việc theo nhóm cùng điều dưỡng và bác sĩ. Bệnh viện có đào tạo nội bộ cho người mới về vệ sinh, thuật ngữ và quy trình. Lịch làm việc linh hoạt theo tuần, dễ sắp xếp với học tập hoặc gia đình.",
-    prefecture: "Tokyo",
-    region: "Kanto",
-    visa: "不問",
-    language: "N4",
-    salary: "時給 1,300〜1,600円",
-    tags: ["寮・社宅あり", "N3+", "土日休み"]
-  },
-  {
-    id: "kng-003",
-    title_ja: "介護スタッフ（夜勤なし・グループホーム）",
-    title_vi: "Điều dưỡng (không ca đêm) tại group home",
-    description_ja:
-      "少人数ユニット型グループホームで、日中の生活支援が中心。配膳・清掃・買い物同行・レクリエーション運営など、家庭的な雰囲気で一人ひとりに寄り添うケアを行います。夜勤がないため生活リズムを崩さずに働け、外国籍スタッフへのフォローも手厚く定着率が高い職場です。",
-    description_vi:
-      "Làm việc trong mô hình nhóm ít người, hỗ trợ sinh hoạt ban ngày như bày món, dọn dẹp, đi mua sắm cùng người cao tuổi và tổ chức hoạt động giải trí. Không có ca đêm nên giữ được nhịp sống ổn định. Đơn vị hỗ trợ tốt cho nhân viên nước ngoài, môi trường thân thiện và gắn bó lâu dài.",
-    prefecture: "Kanagawa",
-    region: "Kanto",
-    visa: "特定技能",
-    language: "N3",
-    salary: "月給 220,000〜260,000円",
-    tags: ["寮・社宅あり", "N3+", "土日休み"]
-  },
+export const jobs: Job[] = [ // lib/jobs.ts の該当3件を書き換え（例）
+{
+  id: "kng-001",
+  title_ja: "介護スタッフ（特定技能・有料老人ホーム）",
+  title_vi: "Điều dưỡng (Tokutei) tại viện dưỡng lão",
+  description_ja:
+    "有料老人ホームでの介護業務全般（入浴・食事・排泄介助、見守り、リハビリ補助、記録）。入職後1〜3ヶ月は先輩が同行し、段階チェックで習熟を支援。夜勤は2〜3名体制。\n【給与】基本給200,000円＋特定技能手当20,000円＋夜勤手当8,000円/回（4回想定＝32,000円）＋通勤手当上限20,000円＝月給252,000〜270,000円目安\n【待遇】社会保険、寮・社宅（家賃補助2万円）、制服貸与、食事補助、資格取得支援（介護福祉士受験費用補助）、日本語学習サポート、入社祝い金あり。",
+  description_vi:
+    "Công việc: hỗ trợ tắm, ăn uống, vệ sinh, theo dõi, ghi chép, hỗ trợ phục hồi chức năng. Có người hướng dẫn 1–3 tháng; ca đêm 2–3 người cùng trực.\n【Lương】Lương cơ bản 200,000 + phụ cấp Tokutei 20,000 + phụ cấp ca đêm 8,000/ca (4 ca ≒ 32,000) + phụ cấp đi lại tối đa 20,000 → tổng 252,000–270,000 yên/tháng.\n【Phúc lợi】Bảo hiểm đầy đủ, ký túc xá trợ cấp 20,000, đồng phục, trợ cấp bữa ăn, hỗ trợ lấy bằng Kaigo Fukushishi, hỗ trợ tiếng Nhật, thưởng vào công ty.",
+  prefecture: "Kanagawa",
+  region: "Kanto",
+  visa: "特定技能",
+  language: "N3",
+  salary: "月給 252,000〜270,000円（各種手当込目安）",
+  tags: ["寮・社宅あり","N3+","土日休み"]
+},
+{
+  id: "tky-002",
+  title_ja: "病院内サポート（無資格OK・病棟助手）",
+  title_vi: "Trợ lý bệnh viện (không yêu cầu chứng chỉ)",
+  description_ja:
+    "業務：患者搬送、シーツ交換、備品補充、環境整備、メッセンジャー。医療行為なし、院内研修あり。\n【給与】基本給185,000円＋シフト手当5,000円＋皆勤手当5,000円＋通勤手当上限20,000円＝月給195,000〜215,000円目安\n【待遇】社保、制服、ロッカー、食堂割引、残業代1分単位、週休2日（シフト制）、有給、正社員登用あり。",
+  description_vi:
+    "Công việc: dẫn bệnh nhân, thay ga, bổ sung vật tư, giữ vệ sinh, chuyển hồ sơ. Không thao tác y khoa; có đào tạo nội bộ.\n【Lương】Cơ bản 185,000 + phụ cấp ca 5,000 + chuyên cần 5,000 + đi lại tối đa 20,000 → 195,000–215,000 yên/tháng.\n【Phúc lợi】Bảo hiểm, đồng phục, nhà ăn giảm giá, OT tính từng phút, nghỉ 2 ngày/tuần, có phép năm, có cơ hội lên chính thức.",
+  prefecture: "Tokyo",
+  region: "Kanto",
+  visa: "不問",
+  language: "N4",
+  salary: "月給 195,000〜215,000円（各種手当込目安）",
+  tags: ["寮・社宅あり","N3+","土日休み"]
+},
+{
+  id: "kng-003",
+  title_ja: "介護スタッフ（夜勤なし・グループホーム）",
+  title_vi: "Điều dưỡng (không ca đêm) tại group home",
+  description_ja:
+    "日中の生活支援（配膳・清掃・買い物同行・レク運営）。夜勤なしの固定シフト。\n【給与】基本給200,000円＋処遇改善手当15,000円＋資格手当（実務者5,000円/介福10,000円）＋通勤手当上限15,000円＝月給215,000〜235,000円目安\n【待遇】社保、家賃補助（最大20,000円）、退職金制度、資格取得支援、研修充実、土日休み可（応相談）。",
+  description_vi:
+    "Hỗ trợ sinh hoạt ban ngày; không có ca đêm, ca cố định.\n【Lương】Cơ bản 200,000 + phụ cấp xử lý 15,000 + phụ cấp chứng chỉ (5,000–10,000) + đi lại tối đa 15,000 → 215,000–235,000 yên/tháng.\n【Phúc lợi】Bảo hiểm, hỗ trợ nhà ở tối đa 20,000, quỹ hưu trí, hỗ trợ lấy chứng chỉ, nhiều khóa đào tạo, có thể sắp xếp nghỉ T7–CN.",
+  prefecture: "Kanagawa",
+  region: "Kanto",
+  visa: "特定技能",
+  language: "N3",
+  salary: "月給 215,000〜235,000円（各種手当込目安）",
+  tags: ["寮・社宅あり","N3+","土日休み"]
+},
   {
     id: "tky-004",
     title_ja: "訪問介護（直行直帰・移動手当あり）",
